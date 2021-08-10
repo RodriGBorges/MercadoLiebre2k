@@ -1,4 +1,19 @@
-img {
+header {
+    background-color: #EAC926;
+}
+
+h3.tittle {
+    font-size: 24px;
+}
+
+p.monto {
+    font-size: 18px;
+}
+
+p.descuento {
+    font-size: 16px;
+}
+img.foto_articulo{
     width: 300px;
 }
 
