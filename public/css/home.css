@@ -1,22 +1,150 @@
+/* HEADER */
+
 header {
-    background-color: #EAC926;
+    background-color: var(--color-amarillo);
 }
 
-h3.tittle {
-    font-size: 24px;
+#logo {
+    width: 50%;
+    margin-left: 20px;
 }
 
+/* un margen al search bar para que quede alineado al logo */
+header div.search {
+    margin-left: 20px;
+}
+/* compra en cuotas y sin tarjeta de crédito */
+header p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* color del las secciones del nav (ofertas,vender ayuda,etc) */
+header nav ul li a {
+    color: black;
+}
+
+/* truco para desplegar menu */
+header nav input, header nav ul {
+    display: none
+}
+
+header nav ul {
+    display: block;
+}
+
+header nav input:checked ~ ul {
+    display: block;
+}
+
+/* contenedor del menu hamburguesa */
+header nav label {
+    display: block;
+    /* margin: 0 auto; */
+    text-align: center;
+}
+/* menu hamburguesa */
+#menu {
+    font-size: 25px;
+    color: white;
+    padding: 12px;
+    border-radius: 15%;
+    margin: 20px auto 10px;
+    background-color: var(--color-celeste);
+}
+/* color iconos del header */
+.iconos {
+    color: black;
+}
+
+/* MAIN */
+
+#banner {
+    width: 100%;
+    display: none;
+}
+
+/* secciones del home (ofertas, ultima visita) */
+h3.titulares {
+    color: var(--color-gris-oscuro);
+    font-size: var(--titulares);
+    text-align: center;
+    margin: 10%;
+}
+
+/* div.contenedor_imagen {
+    position: relative;
+}
+
+
+img.foto_articulo label.camion {
+    position: absolute;
+}
+*/
+
+/* tarjetas de los productos */
+article {
+    background-color: white;
+    padding: 20px 0;
+    margin: 50px 50px;
+}
+
+section.ofertas article:last-child {
+    margin-bottom: 0;
+}
+
+/* precios de cada artículo */
 p.monto {
-    font-size: 18px;
+    font-size: var(--precios);
 }
-
+/* descuento de cada artículo */
 p.descuento {
-    font-size: 16px;
+    color: var(--color-verde);
+    font-size: var(--descuentos-descripciones);
+    margin-bottom: 10px;
 }
-img.foto_articulo{
-    width: 300px;
+/* titulo productos */
+h4.titulo_producto{
+    margin-bottom: 15px;
+    text-align: center;
+}
+/* foto del producto */
+main section article img.foto_articulo{
+    width: 65%;
+    display: block;
+    margin: 20px auto;
+    /* max-width: 400px; */
+}
+/* la info de cada artículo */
+p {
+    text-align: center;
+    margin-top: 10px;
 }
 
+/* FOOTER */
 
-/* 0baa58
-00a650 */
+/* fondo footer */
+footer {
+    background-color: white;
+}
+/* contenido footer */
+footer section.pie_pagina {
+    color: var(--color-gris-oscuro);
+    margin: 50px auto;
+    text-align: center;
+    padding: 0 50px;
+}
+/* copyright al principio */
+footer section:last-child {
+    text-align: start;
+    padding: 0;
+    margin: 0;
+}
+
+/* iconos del footer */
+.iconos_footer {
+    font-size: 2em;
+    color: var(--color-celeste);
+    padding-top: 60px;
+    margin-bottom: 10px;
+    text-align: center;
+}
