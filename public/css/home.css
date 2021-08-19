@@ -28,20 +28,19 @@ header nav input, header nav ul {
     display: none
 }
 
-header nav ul {
+/* header nav ul {
     display: block;
-}
+} */
 
 header nav input:checked ~ ul {
     display: block;
 }
 
-/* contenedor del menu hamburguesa */
-header nav label {
-    display: block;
-    /* margin: 0 auto; */
+/* centramos el menu hamburguesa */
+p.menu {
     text-align: center;
 }
+
 /* menu hamburguesa */
 #menu {
     font-size: 25px;
@@ -64,32 +63,25 @@ header nav label {
 }
 
 /* secciones del home (ofertas, ultima visita) */
-h3.titulares {
+h3 {
     color: var(--color-gris-oscuro);
     font-size: var(--titulares);
     text-align: center;
-    margin: 10%;
+    margin: 20px;
 }
-
-/* div.contenedor_imagen {
-    position: relative;
-}
-
-
-img.foto_articulo label.camion {
-    position: absolute;
-}
-*/
 
 /* tarjetas de los productos */
 article {
+    width: 90%;
     background-color: white;
-    padding: 20px 0;
-    margin: 50px 50px;
+    /* padding: 20px 0; */
+    margin: 10px auto;
 }
 
-section.ofertas article:last-child {
-    margin-bottom: 0;
+/* contenedor del camion envios, precio, descuento y titulo */
+.contenedor {
+    border: 1px solid var(--color-gris-claro);
+    padding: 15px;
 }
 
 /* precios de cada artículo */
@@ -107,13 +99,30 @@ h4.titulo_producto{
     margin-bottom: 15px;
     text-align: center;
 }
+/* la descripcion del producto en mobile no se va a ver */
+p.descripcion {
+    color: black;
+    display: none;
+}
+
 /* foto del producto */
-main section article img.foto_articulo{
-    width: 65%;
-    display: block;
-    margin: 20px auto;
+img.foto_articulo {
+    width: 100%;
     /* max-width: 400px; */
 }
+/* posicionamiento del camion dentro de la imagen */
+div.envio_gratis {
+    position: relative;
+}
+
+label.camion {
+    position: absolute;
+    top: 80%;
+    bottom: 0;
+    right: 0;
+    left: 87%;
+}
+
 /* la info de cada artículo */
 p {
     text-align: center;
@@ -122,19 +131,21 @@ p {
 
 /* FOOTER */
 
-/* fondo footer */
+/* fondo footer y arreglo el footer para que se posicione debajo de los elementos flotantes */
 footer {
     background-color: white;
+    clear: both;
 }
 /* contenido footer */
-footer section.pie_pagina {
+section.pie_pagina, section.pie_pagina4 {
     color: var(--color-gris-oscuro);
     margin: 50px auto;
     text-align: center;
     padding: 0 50px;
+    margin-top: 0;
 }
 /* copyright al principio */
-footer section:last-child {
+section.pie_pagina4 {
     text-align: start;
     padding: 0;
     margin: 0;
@@ -148,3 +159,271 @@ footer section:last-child {
     margin-bottom: 10px;
     text-align: center;
 }
+
+/* LAS IMÁGENES SOBRESALEN 1 PIXEL EN CADA COSTADO DE SU CAJA ARTICLE */
+
+@media (min-width: 150px) {
+    label.camion {
+        top: 77%;
+        left: 74%;
+    }
+}
+
+@media (min-width: 300px) {
+    label.camion {
+        top: 87%;
+        left: 85%;
+    }
+}
+
+@media (min-width: 200px) {
+    label.camion {
+        top: 82%;
+        left: 80%;
+    }
+}
+
+@media (min-width: 300px) {
+    label.camion {
+        top: 87%;
+        left: 85%;
+    }
+}
+
+/*                                 Tablets                        */
+
+@media (min-width: 361px) {
+/* si no lo toma podemos poner !important para que tenga prioridad */
+
+    /* ponemos el nav fijo */
+    header nav ul {
+        display: block; 
+    }
+
+/* ocultamos el menu hamburguesa */
+    #menu {
+        display: none;
+    }
+/* mostramos el banner */
+    #banner {
+        display: block;
+        
+    }
+/* Arreglo  del eje x, y del camion */
+    label.camion {
+        top: 82%;
+        left: 79%;
+    }
+
+    /* arreglo titulo de ofertas  */
+    h3.ofertas {
+        float: left;
+        width: 100%;
+        margin-left: 0;
+    }
+/* mostramos la descripción del producto */
+    p.descripcion {
+        display: block;
+    }
+/* en tablets se muestran 2 columnas  */
+    main section article {
+        float: left;
+    }
+
+/* centramos los articulos */
+    article.uno, article.tres {
+        margin-left: 5%;
+        margin-right: 1.5%;
+        margin-bottom: 0;
+    }
+
+    article.dos, article.cuatro {
+        margin-right: 5%;
+        margin-left: 2.5%;
+        margin-bottom: 0;
+    }
+
+    article {
+        width: 43%;
+        box-shadow: 0px 0px 10px 0px rgba(100,100,100);
+    }
+/* espaciado footer y ultimo articulo */
+    #ultimo_articulo {
+        margin-bottom: 10px;
+    }
+
+    /* destruí el main pero se ve bien */
+}
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media (min-width: 450px) {
+    label.camion {
+        top: 84%;
+        left: 82%;
+    }
+}
+
+@media (min-width: 500px) {
+    label.camion {
+        top: 85%;
+        left: 83%;
+    }
+}
+
+@media (min-width: 600px) {
+    label.camion {
+        top: 87%;
+        left: 86%;
+    }
+}
+
+
+@media (min-width: 700px) {
+    label.camion {
+        top: 89%;
+        left: 88%;
+    }
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/*                                          Desktop                                          */
+
+@media (min-width: 769px) {
+/* sacamos la br para que la lupa se vea al lado del search */
+    br {
+        display: none;
+    }
+/* un poco de espacio entre el banner y el nav */
+    header nav ul li {
+        margin-bottom: 10px;
+    }
+    
+/* search bar y estilo lupa */
+    header div.search {
+        margin: 0;
+    }
+    header form {
+        position: relative;
+    }
+
+    header form input {
+        border: 1px solid black;
+        width: 320px;
+        margin-top: 19%;
+        height: 25px;
+    }
+
+    .lupa {
+        width: 30px;
+        height: 25px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: white;
+        border: 1px solid black;
+        border-left: 1px solid var(--color-gris-claro);
+    }
+
+/* barra de buscar al lado del logo */
+    .search {
+        float: right;
+        
+    }
+/* compra en cuotas y sin tarjeta de credito...*/
+    header p {
+        text-align: start;
+    }
+/* el nav en una sola línea y centrado con columnas */
+    header nav ul {
+        text-align: center;
+        columns: 4;
+    }
+/* corrigiendo el width de los articulos para que entren 4 */
+    main section article {
+        margin: 0 !important;
+        width: 21%;
+    }
+
+    .uno {
+        margin-left: 7% !important;
+        margin-right: 1% !important;
+    }
+
+    .dos {
+        margin-left: 0 !important;
+        margin-right: 1% !important;
+    }
+
+    .tres {
+        margin-left: 0 !important;
+        margin-right: 1% !important;
+    }
+
+    .cuatro {
+        margin-left: 0 !important;
+        margin-right: 5% !important;
+    }
+
+    #ultimo_articulo {
+        margin-bottom: 10px !important;
+    }
+
+/* Arreglo posicion del camion dentro de la imagen */
+    label.camion {
+        top: 82%;
+        left: 80%;
+    }
+/* las secciones del footer en columnas y un poco separadas */
+    section.pie_pagina{
+        display: inline-block;
+        width: 32%;
+        margin-left: .6%;
+        margin-right: .34%;
+    }
+/* copyright al centro */
+    section.pie_pagina4 {
+        width: 100%;
+        text-align: center;
+    }
+    
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media (min-width: 850px) {
+    label.camion {
+        top: 85%;
+        left: 82%;
+    }
+}
+
+@media (min-width: 850px) {
+    label.camion {
+        top: 85%;
+        left: 82%;
+    }
+}
+
+@media (min-width: 1100px) {
+    label.camion {
+        top: 87%;
+        left: 85%;
+    }
+}
+
+@media (min-width: 1300px) {
+    label.camion {
+        top: 87%;
+        left: 85%;
+    }
+
+    body {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
