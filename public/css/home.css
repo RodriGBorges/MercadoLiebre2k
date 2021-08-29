@@ -6,18 +6,44 @@ header {
 
 #logo {
     width: 50%;
-    margin-left: 20px;
+    max-width: 360px;
 }
 
-/* un margen al search bar para que quede alineado al logo */
-header div.search {
-    margin-left: 20px;
+header div.logo_container {
+    display: flex;
+    padding: 20px 20px 0 20px;
+    align-items: center;
+    flex-wrap: wrap;
 }
-/* compra en cuotas y sin tarjeta de crédito */
-header p {
+
+header div.logo_container p {
     text-align: center;
-    margin-bottom: 20px;
 }
+
+header div.logo_container div.search {
+    width: 50%;
+    max-width: 275px;
+}
+
+header div.logo_container div.search form input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    margin-left: 10px;
+}
+
+header div.logo_container div.search form {
+    display: flex;
+}
+
+header div.logo_container div.search form button {
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    width: 30px;
+    color: var(--color-gris-oscuro);
+}
+
 /* color del las secciones del nav (ofertas,vender ayuda,etc) */
 header nav ul li a {
     color: black;
@@ -70,13 +96,28 @@ h3 {
     margin: 20px;
 }
 
+h3.ofertas {
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
 /* tarjetas de los productos */
 article {
     width: 90%;
     background-color: white;
+    align-self: center;
+    margin-bottom: 10px;
     /* padding: 20px 0; */
-    margin: 10px auto;
 }
+main section.ultima_visita, main section.articulos_oferta {
+    display: flex;
+    flex-direction: column;
+}
+
+main section.articulos_oferta {
+    margin-top: 10px;
+}
+
 
 /* contenedor del camion envios, precio, descuento y titulo */
 .contenedor {
@@ -84,20 +125,27 @@ article {
     padding: 15px;
 }
 
+main section.ultima_visita article.productos div.contenedor, main section.articulos_oferta article.productos div.contenedor {
+    position: relative;
+}
+
 /* precios de cada artículo */
 p.monto {
+    text-align: start;
     font-size: var(--precios);
 }
 /* descuento de cada artículo */
-p.descuento {
+main span.descuento {
     color: var(--color-verde);
     font-size: var(--descuentos-descripciones);
     margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 15px;
 }
 /* titulo productos */
 h4.titulo_producto{
-    margin-bottom: 15px;
-    text-align: center;
+    margin-top: 20px;
+    text-align: start;
 }
 /* la descripcion del producto en mobile no se va a ver */
 p.descripcion {
@@ -110,18 +158,18 @@ img.foto_articulo {
     width: 100%;
     /* max-width: 400px; */
 }
-/* posicionamiento del camion dentro de la imagen */
-div.envio_gratis {
-    position: relative;
+/* camion */
+
+main section.ultima_visita article.productos div.contenedor i, main section.articulos_oferta article.productos div.contenedor i {
+    position: absolute;
+    color: var(--color-verde);
+    padding: 5px;
+    border: 1px solid var(--color-verde);
+    border-radius: 50%;
+    right: 20px;
+    top: -15px;
 }
 
-label.camion {
-    position: absolute;
-    top: 80%;
-    bottom: 0;
-    right: 0;
-    left: 87%;
-}
 
 /* la info de cada artículo */
 p {
@@ -134,7 +182,6 @@ p {
 /* fondo footer y arreglo el footer para que se posicione debajo de los elementos flotantes */
 footer {
     background-color: white;
-    clear: both;
 }
 /* contenido footer */
 section.pie_pagina, section.pie_pagina4 {
@@ -160,45 +207,45 @@ section.pie_pagina4 {
     text-align: center;
 }
 
-/* LAS IMÁGENES SOBRESALEN 1 PIXEL EN CADA COSTADO DE SU CAJA ARTICLE */
-
-@media (min-width: 150px) {
-    label.camion {
-        top: 77%;
-        left: 74%;
-    }
-}
-
-@media (min-width: 300px) {
-    label.camion {
-        top: 87%;
-        left: 85%;
-    }
-}
-
-@media (min-width: 200px) {
-    label.camion {
-        top: 82%;
-        left: 80%;
-    }
-}
-
-@media (min-width: 300px) {
-    label.camion {
-        top: 87%;
-        left: 85%;
-    }
-}
-
-/*                                 Tablets                        */
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/*                                         Tablets                                                 */
 
 @media (min-width: 361px) {
-/* si no lo toma podemos poner !important para que tenga prioridad */
+
+
+    header div.logo_container {
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+    header div.logo_container p {
+        padding-left: 15px;
+    }
+
 
     /* ponemos el nav fijo */
     header nav ul {
-        display: block; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
+
+    header nav ul div.container_1 {
+        display: flex;
+        justify-content: flex-start;
+        width: 40%;
+    }
+    header nav ul div.container_2 {
+        display: flex;
+        width: 40%;
+    }
+
+    header nav ul div li {
+        margin: 15px;
+    }
+
+
 
 /* ocultamos el menu hamburguesa */
     #menu {
@@ -209,15 +256,8 @@ section.pie_pagina4 {
         display: block;
         
     }
-/* Arreglo  del eje x, y del camion */
-    label.camion {
-        top: 82%;
-        left: 79%;
-    }
-
     /* arreglo titulo de ofertas  */
     h3.ofertas {
-        float: left;
         width: 100%;
         margin-left: 0;
     }
@@ -225,205 +265,54 @@ section.pie_pagina4 {
     p.descripcion {
         display: block;
     }
+
+    main span.descuento {
+    padding-left: 50px;
+    }
 /* en tablets se muestran 2 columnas  */
-    main section article {
-        float: left;
-    }
-
-/* centramos los articulos */
-    article.uno, article.tres {
-        margin-left: 5%;
-        margin-right: 1.5%;
-        margin-bottom: 0;
-    }
-
-    article.dos, article.cuatro {
-        margin-right: 5%;
-        margin-left: 2.5%;
-        margin-bottom: 0;
-    }
+    main section.ultima_visita, main section.articulos_oferta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
     article {
-        width: 43%;
+        width: 45%;
         box-shadow: 0px 0px 10px 0px rgba(100,100,100);
     }
-/* espaciado footer y ultimo articulo */
-    #ultimo_articulo {
-        margin-bottom: 10px;
-    }
 
-    /* destruí el main pero se ve bien */
+
 }
 
 
+@media (min-width: 620px) {
+    header nav ul {
+        
+        flex-direction: row;
+    }
 
+    header nav ul div.container_2 {
+        justify-content: flex-end;
+    }
+}
+
+
+@media (min-width: 900px) {
+    header div.logo_container {
+        justify-content: space-between;
+    }
+}
 /* /////////////////////////////////////////////////////////////////////////////////////////////// */
-
-@media (min-width: 450px) {
-    label.camion {
-        top: 84%;
-        left: 82%;
-    }
-}
-
-@media (min-width: 500px) {
-    label.camion {
-        top: 85%;
-        left: 83%;
-    }
-}
-
-@media (min-width: 600px) {
-    label.camion {
-        top: 87%;
-        left: 86%;
-    }
-}
-
-
-@media (min-width: 700px) {
-    label.camion {
-        top: 89%;
-        left: 88%;
-    }
-}
 /* /////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /*                                          Desktop                                          */
 
 @media (min-width: 769px) {
-/* sacamos la br para que la lupa se vea al lado del search */
-    br {
-        display: none;
-    }
-/* un poco de espacio entre el banner y el nav */
-    header nav ul li {
-        margin-bottom: 10px;
-    }
-    
-/* search bar y estilo lupa */
-    header div.search {
-        margin: 0;
-    }
-    header form {
-        position: relative;
+    article {
+        width: 22.5%;
     }
 
-    header form input {
-        border: 1px solid black;
-        width: 320px;
-        margin-top: 19%;
-        height: 25px;
-    }
-
-    .lupa {
-        width: 30px;
-        height: 25px;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background-color: white;
-        border: 1px solid black;
-        border-left: 1px solid var(--color-gris-claro);
-    }
-
-/* barra de buscar al lado del logo */
-    .search {
-        float: right;
-        
-    }
-/* compra en cuotas y sin tarjeta de credito...*/
-    header p {
-        text-align: start;
-    }
-/* el nav en una sola línea y centrado con columnas */
-    header nav ul {
-        text-align: center;
-        columns: 4;
-    }
-/* corrigiendo el width de los articulos para que entren 4 */
-    main section article {
-        margin: 0 !important;
-        width: 21%;
-    }
-
-    .uno {
-        margin-left: 7% !important;
-        margin-right: 1% !important;
-    }
-
-    .dos {
-        margin-left: 0 !important;
-        margin-right: 1% !important;
-    }
-
-    .tres {
-        margin-left: 0 !important;
-        margin-right: 1% !important;
-    }
-
-    .cuatro {
-        margin-left: 0 !important;
-        margin-right: 5% !important;
-    }
-
-    #ultimo_articulo {
-        margin-bottom: 10px !important;
-    }
-
-/* Arreglo posicion del camion dentro de la imagen */
-    label.camion {
-        top: 82%;
-        left: 80%;
-    }
-/* las secciones del footer en columnas y un poco separadas */
-    section.pie_pagina{
-        display: inline-block;
-        width: 32%;
-        margin-left: .6%;
-        margin-right: .34%;
-    }
-/* copyright al centro */
-    section.pie_pagina4 {
-        width: 100%;
-        text-align: center;
-    }
-    
-}
-
-/* /////////////////////////////////////////////////////////////////////////////////////////////// */
-
-@media (min-width: 850px) {
-    label.camion {
-        top: 85%;
-        left: 82%;
+    main span.descuento {
+        padding-left: 30px;
     }
 }
-
-@media (min-width: 850px) {
-    label.camion {
-        top: 85%;
-        left: 82%;
-    }
-}
-
-@media (min-width: 1100px) {
-    label.camion {
-        top: 87%;
-        left: 85%;
-    }
-}
-
-@media (min-width: 1300px) {
-    label.camion {
-        top: 87%;
-        left: 85%;
-    }
-
-    body {
-        max-width: 1300px;
-        margin: 0 auto;
-    }
-}
-
-/* /////////////////////////////////////////////////////////////////////////////////////////////// */
