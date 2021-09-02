@@ -1,0 +1,88 @@
+.register section.container {
+    margin: 20px auto;
+}
+
+.register section.container form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.register section.container form div.datos_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.register section.container form div.datos_container input {
+    margin-bottom: 10px;
+    height: 25px;
+    border: none;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.register section.container form div.datos2_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.register section.container form div.datos2_container input {
+    margin-bottom: 10px;
+    border: none;
+    height: 25px;
+    padding-left: 10px;
+    width: 179px;
+    border-radius: 5px;
+}
+
+.register section.container form div.perfil_container {
+    margin-bottom: 10px;
+    max-width: 350px;
+}
+
+.register section.container form div.perfil_container div.rol_container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.register section.container form div.perfil_container div.rol_container div input {
+    margin: 3px 10px 0 3px;
+    border-radius: 5px;
+}
+
+.register section.container form div.intereses div input {
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.register section.container form div.contraseña {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.register section.container form div.contraseña input {
+    margin-bottom: 10px;
+    border: none;
+    padding-left: 10px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.register section.container form div.final button {
+    margin-right: 20px;
+    height: 30px;
+    padding: 5px;
+    width: 60px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-celeste);
+    color: white;
+}
+
+.register section.container form div.perfil_container h3, .register section.container form div.datos2_container h3, .register section.container form div.intereses, .register section.container form div.intereses h3, .register section.container form div.intereses div, .register section.container form div.foto_user, .register section.container form div.foto_user h3, .register section.container form div.contraseña h3 {
+    margin-bottom: 10px;
+}
+

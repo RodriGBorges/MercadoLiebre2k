@@ -1,0 +1,33 @@
+.login section.container_login {
+    width: 90%;
+    margin: 20px auto;
+    max-width: 950px;
+}
+
+.login section.container_login form {
+    margin: 0 auto;
+}
+
+.login section.container_login form div.container_datos {
+    display: flex;
+    flex-direction: column;
+}
+
+.login section.container_login form div.container_datos input {
+    margin-bottom: 40px;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.login section.container_login form div.container_datos button {
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-celeste);
+    color: white;
+}
+
+

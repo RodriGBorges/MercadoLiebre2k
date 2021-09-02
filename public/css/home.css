@@ -89,53 +89,53 @@ p.menu {
 }
 
 /* secciones del home (ofertas, ultima visita) */
-h3 {
+.home h3 {
     color: var(--color-gris-oscuro);
     font-size: var(--titulares);
     text-align: center;
     margin: 20px;
 }
 
-h3.ofertas {
+.home h3.ofertas {
     margin: 10px;
     margin-bottom: 20px;
 }
 
 /* tarjetas de los productos */
-article {
+.home article {
     width: 90%;
     background-color: white;
     align-self: center;
     margin-bottom: 10px;
     /* padding: 20px 0; */
 }
-main section.ultima_visita, main section.articulos_oferta {
+.home section.ultima_visita, .home section.articulos_oferta {
     display: flex;
     flex-direction: column;
 }
 
-main section.articulos_oferta {
+.home section.articulos_oferta {
     margin-top: 10px;
 }
 
 
 /* contenedor del camion envios, precio, descuento y titulo */
-.contenedor {
+.home .contenedor {
     border: 1px solid var(--color-gris-claro);
     padding: 15px;
 }
 
-main section.ultima_visita article.productos div.contenedor, main section.articulos_oferta article.productos div.contenedor {
+.home section.ultima_visita article.productos div.contenedor, .home section.articulos_oferta article.productos div.contenedor {
     position: relative;
 }
 
 /* precios de cada artículo */
-p.monto {
+.home p.monto {
     text-align: start;
     font-size: var(--precios);
 }
 /* descuento de cada artículo */
-main span.descuento {
+.home span.descuento {
     color: var(--color-verde);
     font-size: var(--descuentos-descripciones);
     margin-bottom: 10px;
@@ -143,24 +143,24 @@ main span.descuento {
     font-size: 15px;
 }
 /* titulo productos */
-h4.titulo_producto{
+.home h4.titulo_producto{
     margin-top: 20px;
     text-align: start;
 }
 /* la descripcion del producto en mobile no se va a ver */
-p.descripcion {
+.home p.descripcion {
     color: black;
     display: none;
 }
 
 /* foto del producto */
-img.foto_articulo {
+.home img.foto_articulo {
     width: 100%;
     /* max-width: 400px; */
 }
 /* camion */
 
-main section.ultima_visita article.productos div.contenedor i, main section.articulos_oferta article.productos div.contenedor i {
+.home section.ultima_visita article.productos div.contenedor i, .home section.articulos_oferta article.productos div.contenedor i {
     position: absolute;
     color: var(--color-verde);
     padding: 5px;
@@ -172,7 +172,7 @@ main section.ultima_visita article.productos div.contenedor i, main section.arti
 
 
 /* la info de cada artículo */
-p {
+.home p {
     text-align: center;
     margin-top: 10px;
 }
@@ -257,26 +257,26 @@ section.pie_pagina4 {
         
     }
     /* arreglo titulo de ofertas  */
-    h3.ofertas {
+    .home h3.ofertas {
         width: 100%;
         margin-left: 0;
     }
 /* mostramos la descripción del producto */
-    p.descripcion {
+    .home p.descripcion {
         display: block;
     }
 
-    main span.descuento {
+    .home span.descuento {
     padding-left: 50px;
     }
 /* en tablets se muestran 2 columnas  */
-    main section.ultima_visita, main section.articulos_oferta {
+    .home section.ultima_visita, .home section.articulos_oferta {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-    article {
+    .home article {
         width: 45%;
         box-shadow: 0px 0px 10px 0px rgba(100,100,100);
     }
@@ -308,11 +308,11 @@ section.pie_pagina4 {
 /*                                          Desktop                                          */
 
 @media (min-width: 769px) {
-    article {
+    .home article {
         width: 22.5%;
     }
 
-    main span.descuento {
+    .home span.descuento {
         padding-left: 30px;
     }
 }
